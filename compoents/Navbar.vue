@@ -11,7 +11,7 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <div class="bg-gray-800 text-white">
+  <div class="bg-blue-300 text-white">
     <!-- ナビゲーションバー -->
     <nav class="flex items-center p-4 sm:justify-start">
       <!-- ハンバーガーボタン（左側） -->
@@ -43,10 +43,10 @@ const toggleMenu = () => {
 
       <!-- メニュー項目（広い画面用） -->
       <ul class="hidden sm:flex space-x-4 ml-8">
-        <li><a href="#" class="hover:text-gray-300">Home</a></li>
-        <li><a href="#" class="hover:text-gray-300">About</a></li>
-        <li><a href="#" class="hover:text-gray-300">Services</a></li>
-        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+        <li><a href="/" class="hover:text-pink-300 text-green-900">Home</a></li>
+        <li><a href="fabrictest" class="hover:text-red-300 text-blue-800">About</a></li>
+        <li><a href="#" class="hover:text-green-300 text-red-700">Services</a></li>
+        <li><a href="#" class="hover:text-blue-300 text-pink-600">Contact</a></li>
       </ul>
     </nav>
 
