@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+const menuItems = [
+  { title: 'Home', url: '/' },
+  { title: 'About', url: 'fabrictest' },
+  { title: 'Services', url: '#' },
+  { title: 'Contact', url: '#' },
+];
+
 // メニューの開閉状態を管理する状態を定義
 const isMenuOpen = ref(false);
 
@@ -43,10 +50,9 @@ const toggleMenu = () => {
 
       <!-- メニュー項目（広い画面用） -->
       <ul class="hidden sm:flex space-x-4 ml-8">
-        <li><a href="/" class="hover:text-pink-300 text-green-900">Home</a></li>
-        <li><a href="fabrictest" class="hover:text-red-300 text-blue-800">About</a></li>
-        <li><a href="#" class="hover:text-green-300 text-red-700">Services</a></li>
-        <li><a href="#" class="hover:text-blue-300 text-pink-600">Contact</a></li>
+        <li v-for="item in menuItems" :key="item.title">
+          <a :href="item.url" class="hover:text-gray-300">{{ item.title }}</a>
+        </li>
       </ul>
     </nav>
 
@@ -55,10 +61,9 @@ const toggleMenu = () => {
         v-if="isMenuOpen"
         class="flex flex-col space-y-2 p-4 sm:hidden"
     >
-      <li><a href="#" class="block hover:text-gray-300">Home</a></li>
-      <li><a href="#" class="block hover:text-gray-300">About</a></li>
-      <li><a href="#" class="block hover:text-gray-300">Services</a></li>
-      <li><a href="#" class="block hover:text-gray-300">Contact</a></li>
+      <li v-for="item in menuItems" :key="item.title">
+        <a :href="item.url" class="block hover:text-gray-300">{{ item.title }}</a>
+      </li>
     </ul>
   </div>
 </template>
