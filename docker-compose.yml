@@ -6,6 +6,6 @@ services:
       - ./.output/public:/usr/share/nginx/html:ro
       - ./conf.d:/etc/nginx/conf.d:ro
     ports:
-      - "7994:80"
+      - "80:80"
     environment:
       - NGINX_PORT=80
