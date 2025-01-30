@@ -1,0 +1,11 @@
+services:
+  web:
+    image: nginx
+    container_name: nuxt-tailwind-fabric-nginx
+    volumes:
+      - ./.output/public:/usr/share/nginx/html:ro
+      - ./conf.d:/etc/nginx/conf.d:ro
+    ports:
+      - "7994:80"
+    environment:
+      - NGINX_PORT=80
